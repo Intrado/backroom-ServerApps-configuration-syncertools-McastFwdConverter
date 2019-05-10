@@ -19,7 +19,7 @@ require client['Root']+'/backroom/buildtools/buildtools'
 $releaseDepot = "releases"
 
 $p4Deps = ["backroom/Tools/EasyXerces/1.1.0.5/_export",
-           "backroom/ServerApps/configuration/syncertools/SyncerHelper/1.0.0.31/_export"]
+           "backroom/ServerApps/configuration/syncertools/SyncerHelper/1.0.0.32/_export"]
 
 $svnDeps = []
 
