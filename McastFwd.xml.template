@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<McastFwdCfg>
+  <Version>1.0</Version>
+  <Mode>Server</Mode>
+  <ListenPort>7778</ListenPort>
+  <UdpPort>10779</UdpPort>
+  <Forward>yes</Forward>
+  <RunAsService>No</RunAsService>
+  <Console>No</Console>
+  <KeepAliveTimeoutSec>2</KeepAliveTimeoutSec>
+  <Activation grp="225.1.77.76" port="7776" useFlag="true" weight="1" heartbeatTimeoutSec="1"/>
+  <FwdList>
+    <FwdGrp id="1" name="PSAP1" ignoreIfNotInDns="false">
+      <Connection server="pots-srv" port="7778" udpport="10779"/>
+      <Connection server="pots-srvb" port="7778" udpport="10779"/>
+    </FwdGrp>
+    <FwdGrp id="2" name="PSAP2" ignoreIfNotInDns="true">
+      <Connection server="pots2-srv" port="7778" udpport="10779"/>
+      <Connection server="pots2-srvb" port="7778" udpport="10779"/>
+    </FwdGrp>
+    <FwdGrp id="3" name="PSAP3" ignoreIfNotInDns="true">
+      <Connection server="pots3-srv" port="7778" udpport="10779"/>
+      <Connection server="pots3-srvb" port="7778" udpport="10779"/>
+    </FwdGrp>
+    <FwdGrp id="4" name="PSAP4" ignoreIfNotInDns="true">
+      <Connection server="pots4-srv" port="7778" udpport="10779"/>
+      <Connection name="B" server="pots4-srvb" port="7778" udpport="10779"/>
+    </FwdGrp>
+    <FwdGrp id="5" name="PSAP5" ignoreIfNotInDns="true">
+      <Connection server="pots5-srv" port="7778" udpport="10779"/>
+      <Connection name="B" server="pots5-srvb" port="7778" udpport="10779"/>
+    </FwdGrp>
+    <FwdGrp id="6" name="PSAP6" ignoreIfNotInDns="true">
+      <Connection server="pots6-srv" port="7778" udpport="10779"/>
+      <Connection server="pots6-srvb" port="7778" udpport="10779"/>
+    </FwdGrp>
+  </FwdList>
+  <MulticastList>
+    <MulticastGrp id="1" name="NM" ip="225.0.10.10" port="22604">
+      <FwdGrpId id="1"/>
+      <FwdGrpId id="2"/>
+      <FwdGrpId id="3"/>
+      <FwdGrpId id="4"/>
+      <FwdGrpId id="5"/>
+      <FwdGrpId id="7"/>
+    </MulticastGrp>
+    <MulticastGrp id="2" name="Pulse" ip="225.1.10.13" port="44000">
+      <FwdGrpId id="1"/>
+      <FwdGrpId id="2"/>
+      <FwdGrpId id="3"/>
+      <FwdGrpId id="4"/>
+      <FwdGrpId id="5"/>
+      <FwdGrpId id="6"/>
+    </MulticastGrp>
+    <MulticastGrp id="3" name="CADR" ip="225.1.77.78" port="7779">
+      <FwdGrpId id="1"/>
+      <FwdGrpId id="2"/>
+      <FwdGrpId id="3"/>
+      <FwdGrpId id="4"/>
+      <FwdGrpId id="5"/>
+      <FwdGrpId id="6"/>
+    </MulticastGrp>
+    <MulticastGrp id="4" name="MsgTel" ip="225.1.10.11" port="9950">
+      <FwdGrpId id="1"/>
+      <FwdGrpId id="2"/>
+      <FwdGrpId id="3"/>
+      <FwdGrpId id="4"/>
+      <FwdGrpId id="5"/>
+      <FwdGrpId id="6"/>
+    </MulticastGrp>
+    <MulticastGrp id="5" name="MsgTel2" ip="225.1.10.11" port="9952">
+      <FwdGrpId id="1"/>
+      <FwdGrpId id="2"/>
+      <FwdGrpId id="3"/>
+      <FwdGrpId id="4"/>
+      <FwdGrpId id="5"/>
+      <FwdGrpId id="6"/>
+    </MulticastGrp>
+    <MulticastGrp id="6" name="MsgTel3" ip="225.1.10.11" port="9954">
+      <FwdGrpId id="1"/>
+      <FwdGrpId id="2"/>
+      <FwdGrpId id="3"/>
+      <FwdGrpId id="4"/>
+      <FwdGrpId id="5"/>
+      <FwdGrpId id="6"/>
+    </MulticastGrp>
+    <MulticastGrp id="7" name="MsgTel4" ip="225.1.10.11" port="9956">
+      <FwdGrpId id="1"/>
+      <FwdGrpId id="2"/>
+      <FwdGrpId id="3"/>
+      <FwdGrpId id="4"/>
+      <FwdGrpId id="5"/>
+      <FwdGrpId id="6"/>
+    </MulticastGrp>
+    <MulticastGrp id="8" name="MsgTel5" ip="225.1.10.11" port="9958">
+      <FwdGrpId id="1"/>
+      <FwdGrpId id="2"/>
+      <FwdGrpId id="3"/>
+      <FwdGrpId id="4"/>
+      <FwdGrpId id="5"/>
+      <FwdGrpId id="6"/>
+    </MulticastGrp>
+    <MulticastGrp id="9" name="MsgTel6" ip="225.1.10.11" port="9960">
+      <FwdGrpId id="1"/>
+      <FwdGrpId id="2"/>
+      <FwdGrpId id="3"/>
+      <FwdGrpId id="4"/>
+      <FwdGrpId id="5"/>
+      <FwdGrpId id="6"/>
+    </MulticastGrp>
+    <MulticastGrp id="10" name="MsgTel7" ip="225.1.10.11" port="9962">
+      <FwdGrpId id="1"/>
+      <FwdGrpId id="2"/>
+      <FwdGrpId id="3"/>
+      <FwdGrpId id="4"/>
+      <FwdGrpId id="5"/>
+      <FwdGrpId id="6"/>
+    </MulticastGrp>
+    <MulticastGrp id="11" name="CADR" ip="225.1.77.78" port="7778">
+      <FwdGrpId id="1"/>
+      <FwdGrpId id="2"/>
+      <FwdGrpId id="3"/>
+      <FwdGrpId id="4"/>
+      <FwdGrpId id="5"/>
+      <FwdGrpId id="6"/>
+    </MulticastGrp>
+    <MulticastGrp id="12" name="PAS" ip="239.9.1.1" port="8550">
+      <FwdGrpId id="1"/>
+      <FwdGrpId id="2"/>
+      <FwdGrpId id="3"/>
+      <FwdGrpId id="4"/>
+      <FwdGrpId id="5"/>
+      <FwdGrpId id="6"/>
+    </MulticastGrp>
+  </MulticastList>
+  <Traces>
+    <Module name="McastFwd">0</Module>
+    <Module name="McastFwdCfg">1</Module>
+    <Module name="McastFwdLocal">0</Module>
+    <Module name="McastFwdRemote">0</Module>
+  </Traces>
+</McastFwdCfg>
