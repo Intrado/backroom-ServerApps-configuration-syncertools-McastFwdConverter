@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="McastFwdConverter.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="_import\EasyXerces\EasyXerces.cpp">
+      <Filter>_import</Filter>
+    </ClCompile>
+    <ClCompile Include="_import\SyncerHelper\IniFileHelper.cpp">
+      <Filter>_import</Filter>
+    </ClCompile>
+    <ClCompile Include="_import\SyncerHelper\SyncerHelper.cpp">
+      <Filter>_import</Filter>
+    </ClCompile>
+    <ClCompile Include="_import\SyncerHelper\XmlHelper.cpp">
+      <Filter>_import</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="McastFwdConverter.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="_import\EasyXerces\EasyXerces.h">
+      <Filter>_import</Filter>
+    </ClInclude>
+    <ClInclude Include="_import\SyncerHelper\IniFileHelper.h">
+      <Filter>_import</Filter>
+    </ClInclude>
+    <ClInclude Include="_import\SyncerHelper\SyncerHelper.h">
+      <Filter>_import</Filter>
+    </ClInclude>
+    <ClInclude Include="_import\SyncerHelper\XmlHelper.h">
+      <Filter>_import</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="McastFwdConverter.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="_import">
+      <UniqueIdentifier>{d1afaa81-0977-4531-b54b-89389613cf23}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
