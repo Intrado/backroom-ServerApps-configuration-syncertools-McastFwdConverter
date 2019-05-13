@@ -10,7 +10,9 @@ using namespace std;
 #define MCAST_UDP_PORT "10779"
 
 const wstring kTemplateDir = L"syncer\\McastFwd\\";
-const wstring kEndDestination = L"_ConfigRoot\\McastFwd\\";
+const wstring kEndDestination = L"_ApplicationRoot\\McastFwd\\";
+const wstring kEndFileName = L"McastFwd.xml";
+const wstring kTemplateFileName = L"McastFwd.xml.template";
 
 bool ReplaceSubString(string& s, const string&from, const string& to)
 {
@@ -244,14 +246,14 @@ bool cMcastFwdConverter::GenerateConfigFile(const string& server)
     CreateDirectoryRecursively(finalPath);
   }
 
-  wstring templateFileName = mConfigRootPath + kTemplateDir + L"McastFwd.xml.template";
-  wstring cfgFileName = finalPath + L"McastFwd.xml";
+  wstring templateFileName = mConfigRootPath + kTemplateDir + kTemplateFileName;
+  wstring cfgFileName = finalPath + kEndFileName;
   wstring tmpCfgFileName = cfgFileName + L".tmp";
 
-  cXMLDoc *pXmlDoc = CreateXMLFromTemplate(templateFileName, cfgFileName);
+  cXMLDoc *pXmlDoc = CreateXMLFromTemplate(templateFileName, tmpCfgFileName);
   if (!pXmlDoc)
   {
-    Log(L"GenerateConfigFile: CreateXMLFromTemplate() failed: template = " + templateFileName + L", filename = " + cfgFileName);
+    Log(L"GenerateConfigFile: CreateXMLFromTemplate() failed: template = " + templateFileName + L", filename = " + tmpCfgFileName);
     return false;
   }
 
@@ -330,7 +332,7 @@ bool cMcastFwdConverter::GenerateConfigFile(const string& server)
     {
       Log(L"File updated: " + cfgFileName);
       // restart process to take the new config file
-      if (!AppendToFile(mCmdFile, kEndDestination + cfgFileName, true, true))
+      if (!server.empty() && !AppendToFile(mCmdFile, kEndDestination + kEndFileName, true, true))
       {
         Log(L"Unable to write to command file " + mCmdFile);
       }
