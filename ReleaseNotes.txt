@@ -1,3 +1,6 @@
+1.0.0.2 - Released 2019/05/13
+   - Change _ConfigRoot to _ApplicationRoot   (http://perforce:8080/@c=2Kf@/283713?ac=10)
+
 1.0.0.1 - Released 2019/05/10
    - Use SyncHelper 1.0.0.32   (http://perforce:8080/@c=2Kf@/283631?ac=10)
    - Add build.bat script   (http://perforce:8080/@c=2Kf@/283625?ac=10)
@@ -6,4 +9,4 @@
    - Add McastFwdConverter   (http://perforce:8080/@c=2Kf@/283619?ac=10)
 
 
-===== Do not remove this line 283631 =====
+===== Do not remove this line 283713 =====
