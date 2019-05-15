@@ -22,24 +22,6 @@ private:
   typedef vector<BackroomServer> BackroomServerList;
   vector<BackroomServerList *> mBackroomServerOnSubnet;
 
-  struct ViperSystem {
-    string domainName;          // vipersystem.domainName
-    string dnsFwder1;           // vipersystem.dnsFwder1
-    string dnsFwder2;           // vipersystem.dnsFwder2
-    string dnsFwder3;           // vipersystem.dnsFwder3
-    string dnsAllowUpdate1;     // vipersystem.dnsAllowUpdate1
-    string dnsAllowUpdate2;     // vipersystem.dnsAllowUpdate2
-    string dnsAltFwderEnable;   // vipersystem.dnsAltFwderEnable
-    string dnsAltDomain;        // vipersystem.dnsAltDomain
-    string dnsAltFwder;         // vipersystem.dnsAltFwder
-    bool   dhcpDefaultEnable;   // vipersystem.dhcpDefaultEnalbe
-    string dhcpNextServer;      // vipersystem.dhcpNextServer
-    string dhcpTftpServer;      // vipersystem.dhcpTftpServer
-    string dhcpFileName;        // vipersystem.dhcpFileName
-    string mViperSubnets;       // from vipernode, vipersubnet eg: 10.103.40.0/24;10.5.0.0/20;10.8.5.0/24
-  };
-  ViperSystem mViperSystem;
-
   wstring mSyncerName;
   wstring mOutPath;
   wstring mContext;
@@ -47,7 +29,6 @@ private:
   wstring mCmdFile;
   wstring mConfigRootPath;
 
-  bool GetViperSystem();
   bool GetBackroomServers();
   BackroomServerList *GetServerListOnSameSubnet(const string& server);
 

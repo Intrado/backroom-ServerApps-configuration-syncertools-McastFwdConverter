@@ -110,12 +110,6 @@ int cMcastFwdConverter::Run()
     return -1;
   }
 
-  if (!GetViperSystem())
-  {
-    Log("Cannot get vipersystem configuration; abort");
-    return -1;
-  }
-
   if (!GetBackroomServers())
   {
     Log("Cannot get backroomserver configuration; abort");
@@ -130,36 +124,6 @@ int cMcastFwdConverter::Run()
   }
 
   return 0;
-}
-
-bool cMcastFwdConverter::GetViperSystem()
-{
-  const string query = "SELECT * FROM vipersystem";
-
-  cSelfDeletingResultSet resultSet;
-  resultSet.mpRes = ExecuteQuery(query);
-
-  if (resultSet.mpRes)
-  {
-    while (resultSet.mpRes->next())
-    {
-      mViperSystem.domainName = ResultGetStringDef(resultSet.mpRes, "domainName");
-      mViperSystem.dnsFwder1 = ResultGetStringDef(resultSet.mpRes, "dnsFwder1");
-      mViperSystem.dnsFwder2 = ResultGetStringDef(resultSet.mpRes, "dnsFwder2");
-      mViperSystem.dnsFwder3 = ResultGetStringDef(resultSet.mpRes, "dnsFwder3");
-      mViperSystem.dnsAllowUpdate1 = ResultGetStringDef(resultSet.mpRes, "dnsAllowUpdate1");
-      mViperSystem.dnsAllowUpdate2 = ResultGetStringDef(resultSet.mpRes, "dnsAllowUpdate2");
-      mViperSystem.dnsAltFwderEnable = ResultGetStringDef(resultSet.mpRes, "dnsAltFwderEnable");
-      mViperSystem.dnsAltDomain = ResultGetStringDef(resultSet.mpRes, "dnsAltDomain");
-      mViperSystem.dnsAltFwder = ResultGetStringDef(resultSet.mpRes, "dnsAltFwder");
-      mViperSystem.dhcpDefaultEnable = (ResultGetStringDef(resultSet.mpRes, "dhcpDefaultEnable") == "1");
-      mViperSystem.dhcpNextServer = ResultGetStringDef(resultSet.mpRes, "dhcpNextServer");
-      mViperSystem.dhcpTftpServer = ResultGetStringDef(resultSet.mpRes, "dhcpTftpServer");
-      mViperSystem.dhcpFileName = ResultGetStringDef(resultSet.mpRes, "dhcpFileName");
-    }
-  }
-
-  return true;
 }
 
 bool cMcastFwdConverter::GetBackroomServers()
@@ -339,7 +303,7 @@ bool cMcastFwdConverter::GenerateConfigFile(const string& server)
     }
     else
     {
-      Log(L"File is the same: " + finalPath + cfgFileName);
+      Log(L"File is the same: " + cfgFileName);
     }
   }
   catch (std::exception e)
