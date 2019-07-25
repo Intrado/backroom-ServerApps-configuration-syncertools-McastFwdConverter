@@ -283,7 +283,7 @@ bool cMcastFwdConverter::GenerateConfigFile(const string& server)
 
     // RunAsService
     DOMNode *pRunAsService = NULL;
-    value = (!server.empty() ? "Yes" : "No");
+    value = (server.empty() ? "Yes" : "No");
     pXmlDoc->CreateChildTextNode("RunAsService", value, pRootNode, &pRunAsService);
 
     // Comment
