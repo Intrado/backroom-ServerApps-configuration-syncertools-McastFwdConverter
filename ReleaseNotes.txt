@@ -1,3 +1,8 @@
+1.0.0.4 - Released 2019/07/25
+   - Add RunAsService in McastFwd.xml   (http://perforce:8080/@c=2Kf@/286219?ac=10)
+   - Add RunAsService in McastFwd.xml   (http://perforce:8080/@c=2Kf@/286218?ac=10)
+   - Add .rc file to the project   (http://perforce:8080/@c=2Kf@/286217?ac=10)
+
 1.0.0.3 - Released 2019/05/15
    - Remove unused code   (http://perforce:8080/@c=2Kf@/283913?ac=10)
 
@@ -12,4 +17,4 @@
    - Add McastFwdConverter   (http://perforce:8080/@c=2Kf@/283619?ac=10)
 
 
-===== Do not remove this line 283913 =====
+===== Do not remove this line 286219 =====
