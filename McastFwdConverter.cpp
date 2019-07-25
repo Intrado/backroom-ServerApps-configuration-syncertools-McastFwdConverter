@@ -281,6 +281,11 @@ bool cMcastFwdConverter::GenerateConfigFile(const string& server)
     string value = (!server.empty() ? "true" : "false");
     pXmlDoc->CreateChildTextNode("NodeManagerClient", value, pRootNode, &pNodeMgrClientNode);
 
+    // RunAsService
+    DOMNode *pRunAsService = NULL;
+    value = (!server.empty() ? "Yes" : "No");
+    pXmlDoc->CreateChildTextNode("RunAsService", value, pRootNode, &pRunAsService);
+
     // Comment
     DOMNode *pCommentNode = NULL;
     string comment = "This configuration is generated for " + (!server.empty() ? server : "satellite site");
