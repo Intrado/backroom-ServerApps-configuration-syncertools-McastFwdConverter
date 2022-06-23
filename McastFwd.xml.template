@@ -52,14 +52,6 @@
       <FwdGrpId id="5"/>
       <FwdGrpId id="6"/>
     </MulticastGrp>
-    <MulticastGrp id="3" name="CADR" ip="225.1.77.78" port="7779">
-      <FwdGrpId id="1"/>
-      <FwdGrpId id="2"/>
-      <FwdGrpId id="3"/>
-      <FwdGrpId id="4"/>
-      <FwdGrpId id="5"/>
-      <FwdGrpId id="6"/>
-    </MulticastGrp>
     <MulticastGrp id="4" name="MsgTel" ip="225.1.10.11" port="9950">
       <FwdGrpId id="1"/>
       <FwdGrpId id="2"/>
