@@ -1,3 +1,0 @@
-@echo off
-p4 sync -f ...
-ruby dobuild.rb %1 %2 %3 %4 %5 %6
