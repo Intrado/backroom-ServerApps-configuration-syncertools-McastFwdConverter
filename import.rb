@@ -14,8 +14,7 @@ p4ReleaseDepot = "releases"
 
 # Dependencies obtained from Perforce
 
-p4Deps = ["backroom/Tools/EasyXerces/1.1.0.5/_export",
-           "backroom/ServerApps/configuration/syncertools/SyncerHelper/1.0.0.32/_export"]
+p4Deps = []
 
 
 # To import dependencies from Perforce
@@ -41,6 +40,8 @@ p4Deps.each { |dep|
 githubDeps = [ # comma separated list of elements with following elements for each dependency
   # Convert Perforce dependencies to GitHub as it becomes available
   #['github-repo-name', 'github-release-version', 'github-release-file-asset', 'destination-directory']
+  ['backroom-Tools-EasyXerces', '1.1.0.9', 'export.tar.gz', '_import/EasyXerces'],
+  ['backroom-ServerApps-configuration-syncertools-SyncerHelper', '1.0.0.32', 'export.tar.gz', '_import/SyncerHelper'],
 ]
 
 
